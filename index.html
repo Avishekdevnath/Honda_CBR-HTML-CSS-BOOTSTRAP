@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CDN FIle -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Title Section -->
     <title>Apple Shop</title>
 </head>
 
 <body>
+
+    <!-- Main section starts -->
     <main class="py-5 container  d-grid justify-content-center ">
         <section class=" row  g-5">
 
@@ -36,9 +42,9 @@
                     <h5 class="fw-bold ">Memory</h5>
 
                     <span>
-                        <button id="8gb-button" class="btn btn-white rounded btn-outline-dark ">8GB unified
+                        <button id="8gb-ram" class="btn btn-white rounded btn-outline-dark ">8GB unified
                             memory</button>
-                        <button class="btn btn-white rounded btn-outline-dark ">16GB
+                        <button id="16gb-ram" class="btn btn-white rounded btn-outline-dark ">16GB
                             unified
                             memory</button>
                     </span>
@@ -49,9 +55,12 @@
                     <h5 class="fw-bold ">Storage</h5>
 
                     <span>
-                        <button class="btn btn-white rounded btn-outline-dark ">256GB SSD storage</button>
-                        <button class="btn btn-white rounded btn-outline-dark ">512GB SSD storage</button>
-                        <button class="btn btn-white rounded btn-outline-dark ">1TB SSD storage</button>
+                        <button id="256gb-storage" class="btn btn-white rounded btn-outline-dark ">256GB SSD
+                            storage</button>
+                        <button id="512gb-storage" class="btn btn-white rounded btn-outline-dark ">512GB SSD
+                            storage</button>
+                        <button id="1tb-storage" class="btn btn-white rounded btn-outline-dark ">1TB SSD
+                            storage</button>
                     </span>
                 </div>
 
@@ -62,9 +71,11 @@
                     <h5 class="fw-bold ">Choose your delivery option</h5>
 
                     <span>
-                        <button class="btn btn-white rounded btn-outline-dark ">Friday, Aug 25 FREE Prime
+                        <button id="slow-delivery" class="btn btn-white rounded btn-outline-dark ">Friday, Aug 25 FREE
+                            Prime
                             Delivery</button>
-                        <button class="btn btn-white rounded btn-outline-dark ">Friday, Aug 21 Delivery charge
+                        <button id="fast-delivery" class="btn btn-white rounded btn-outline-dark ">Friday, Aug 21
+                            Delivery charge
                             $20</button>
                     </span>
                 </div>
@@ -76,26 +87,31 @@
                         <tbody>
                             <tr>
                                 <th>Best Price</th>
-                                <th>$1299</th>
+                                <th>$<span id="best-price">1299</span></th>
 
                             </tr>
                             <tr>
 
                                 <th>Extra Memory Cost</th>
-                                <th>$0</th>
+                                <th>$<span id="extra-memory-price">0</span></th>
 
                             </tr>
                             <tr>
 
                                 <th>Extra Storage Cost</th>
-                                <th>$0</th>
+                                <th>$<span id="extra-storage-price">0</span></th>
+                            </tr>
+
+                            <tr>
+                                <th>Delivery charge</th>
+                                <th>$<span id="delivery=charge">0</span></th>
                             </tr>
                         </tbody>
 
                         <tbody>
                             <tr>
                                 <th>Total Price</th>
-                                <th>$1299</th>
+                                <th>$<span id="total-price">1299</span></th>
                             </tr>
                         </tbody>
                     </table>
@@ -106,10 +122,10 @@
                     <h6>Add Promo Code</h6>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Recipient's username"
+                        <input id="cupon-code" type="text" class="form-control" placeholder="Recipient's username"
                             aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary btn-danger text-white" type="button"
-                            id="button-addon2">Apply</button>
+                            id="cupon-button">Apply</button>
                     </div>
                 </div>
 
@@ -118,9 +134,17 @@
 
         </section>
         <hr>
-        <h1 class="text-center ">$<span>1299</span></h1>
+
+        <!-- Final Price Here -->
+        <h1 class="text-center ">$<span id="final-price">1299</span></h1>
 
     </main>
+
+    <!-- End of main section -->
+
+
+    <!-- Js File Here -->
+    <script src="Js/script.js"></script>
 </body>
 
 </html>
