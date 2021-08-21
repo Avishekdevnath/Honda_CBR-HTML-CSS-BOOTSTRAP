@@ -1,26 +1,30 @@
+////////////////////////////////////////////////
+//////////// Updating Value ////////////////////
+////////////////////////////////////////////////
+
 function valueUpdate(valueID, value) {
     const updatePrice = document.getElementById(valueID);
     updatePrice.innerText = value;
 }
 
 
+////////////////////////////////////////////////
+//////////// Updating Total Value //////////////
+////////////////////////////////////////////////
 
 function updateTotalValue() {
 
     const ramPrice = parseInt(document.getElementById('extra-memory-price').innerText);
 
-    console.log(ramPrice);
-
     const storagePrice = parseInt(document.getElementById('extra-storage-price').innerText);
-    console.log(storagePrice);
 
     const deliveryCharge = parseInt(document.getElementById('delivery=charge').innerText);
-    console.log(deliveryCharge);
-
 
     const bestPrice = parseInt(document.getElementById('best-price').innerText);
-    console.log(bestPrice);
 
+
+
+    ////////////////////// Final Calculation ////////////////////////
 
     const totalValue = document.getElementById('total-price');
     totalValue.innerText = bestPrice + ramPrice + storagePrice + deliveryCharge;
@@ -32,7 +36,8 @@ function updateTotalValue() {
 
 
 
-////////////////////////////////// Ram Section Starts ////////////////////////////////
+//////////////////////   Ram Section Starts    //////////////////
+
 document.getElementById('8gb-ram').addEventListener('click', function () {
 
     valueUpdate('extra-memory-price', 0);
@@ -48,14 +53,13 @@ document.getElementById('16gb-ram').addEventListener('click', function () {
     valueUpdate('extra-memory-price', 180);
     updateTotalValue();
 
-
 })
-////////////////////////////////// Ram Section End ////////////////////////////////
+///////////////////////// Ram Section End /////////////////////////
 
 
 
 
-////////////////////////////////// Storage Section Start ////////////////////////////////
+/////////////////////// Storage Section Start /////////////////////////
 document.getElementById('256gb-storage').addEventListener('click', function () {
 
     valueUpdate('extra-storage-price', 0);
@@ -68,6 +72,7 @@ document.getElementById('512gb-storage').addEventListener('click', function () {
 
     valueUpdate('extra-storage-price', 100);
     updateTotalValue();
+
 })
 
 
@@ -77,6 +82,7 @@ document.getElementById('1tb-storage').addEventListener('click', function () {
 
     valueUpdate('extra-storage-price', 180);
     updateTotalValue();
+
 })
 
 ////////////////////////////////// Storage Section End ////////////////////////////////
@@ -103,15 +109,21 @@ document.getElementById('fast-delivery').addEventListener('click', function () {
 ////////////////////////////////// Storage Section End ////////////////////////////////
 
 
+
+//////////////////////////////////////////////////////////////
+///////////// Cupon Code Checking "stevekaku" ////////////////
+//////////////////////////////////////////////////////////////
+
 document.getElementById('cupon-button').addEventListener('click', function () {
-    const cuponCode = document.getElementById('cupon-code').value;
+    const cuponCode = document.getElementById('cupon-code');
+
     const totalPrice = document.getElementById('total-price').innerText;
     const finalPrice = document.getElementById('final-price');
 
-    if (cuponCode == 'stevekaku') {
+    ///////////   Matching Condition ///////////
+    if (cuponCode.value == 'stevekaku') {
         finalPrice.innerText = totalPrice * 0.8;
-        console.log('Paiya gesi');
-    } else {
-        console.log('Painai ');
+
     }
+    cuponCode.value = '';
 })
